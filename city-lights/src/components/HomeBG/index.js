@@ -2,26 +2,7 @@ import { React, useEffect } from "react";
 import "./index.css";
 function HomeBG() {
   const sensorRadius = 200;
-
-  useEffect(() => {
-    const lights = [...document.getElementsByClassName("light")];
-    lights.forEach((light) => {
-      const lightPos = light.getBoundingClientRect();
-      const wrapper = (
-        <g className="light-container">
-          <circle
-            cx={lightPos.x}
-            cy={lightPos.y}
-            r={sensorRadius}
-            fill="blue"
-          />
-          {light}
-        </g>
-      );
-      console.log(wrapper);
-    });
-  }, []);
-  return (
+  const svgElement = (
     <svg
       className="home-bg"
       viewBox="0 0 1432 836"
@@ -4292,5 +4273,26 @@ function HomeBG() {
       </g>
     </svg>
   );
+
+    const lights = 
+//   useEffect(() => {
+//     const lights = [...document.getElementsByClassName("light")];
+//     lights.forEach((light) => {
+//       const lightPos = light.getBoundingClientRect();
+//       const wrapper = (
+//         <g className="light-container">
+//           <circle
+//             cx={lightPos.x}
+//             cy={lightPos.y}
+//             r={sensorRadius}
+//             fill="blue"
+//           />
+//           {light}
+//         </g>
+//       );
+//       console.log(wrapper);
+//     });
+//   }, []);
+  return <div>{svgElement}</div>;
 }
 export default HomeBG;
