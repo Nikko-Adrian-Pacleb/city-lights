@@ -1,6 +1,9 @@
+body {
+    overflow: hidden;
+}
 .home-bg {
     position: absolute;
     width: 100%;
-    bottom: -5em;
     right: 0;
+    bottom: -9em;
 }
