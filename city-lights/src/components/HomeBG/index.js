@@ -4274,25 +4274,50 @@ function HomeBG() {
     </svg>
   );
 
-    const lights = 
-//   useEffect(() => {
-//     const lights = [...document.getElementsByClassName("light")];
-//     lights.forEach((light) => {
-//       const lightPos = light.getBoundingClientRect();
-//       const wrapper = (
-//         <g className="light-container">
-//           <circle
-//             cx={lightPos.x}
-//             cy={lightPos.y}
-//             r={sensorRadius}
-//             fill="blue"
-//           />
-//           {light}
-//         </g>
-//       );
-//       console.log(wrapper);
-//     });
-//   }, []);
-  return <div>{svgElement}</div>;
+  const trialSvg = (
+    <svg viewBox="0 0 1432 836">
+      <g>
+        <circle className="light-trial" cx="100" cy="100" r="20" fill="black" />
+        <circle className="light-trial" cx="350" cy="350" r="20" fill="black" />
+      </g>
+    </svg>
+  );
+  const newTrialSvg = (
+    <svg viewBox="0 0 1432 846">
+      {trialSvg.props.children.props.children.map((light) => (
+        <g>
+          {light}
+          <circle
+            cx={light.props.cx}
+            cy={light.props.cy}
+            r="100"
+            fill="yellow"
+          />
+        </g>
+      ))}
+    </svg>
+  );
+  // trialSvg.props.children.props.children[0].props.fill = "white";
+  // console.log(trialSvg.props.children.props.children[0].props.fill);
+  // const lights =
+  //   useEffect(() => {
+  //     const lights = [...document.getElementsByClassName("light")];
+  //     lights.forEach((light) => {
+  //       const lightPos = light.getBoundingClientRect();
+  //       const wrapper = (
+  //         <g className="light-container">
+  //           <circle
+  //             cx={lightPos.x}
+  //             cy={lightPos.y}
+  //             r={sensorRadius}
+  //             fill="blue"
+  //           />
+  //           {light}
+  //         </g>
+  //       );
+  //       console.log(wrapper);
+  //     });
+  //   }, []);
+  return <div>{newTrialSvg}</div>;
 }
 export default HomeBG;
