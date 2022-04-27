@@ -7,3 +7,16 @@ body {
     right: 0;
     bottom: -9em;
 }
+
+.light {
+    fill: black;
+}
+
+.light-group > circle {
+    fill: blue;
+    opacity: 0;
+}
+
+.light-group:hover > .light{
+    fill: white;
+}
