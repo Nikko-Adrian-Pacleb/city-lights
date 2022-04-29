@@ -1,7 +1,41 @@
 import { React, useEffect } from "react";
 import "./index.css";
 function HomeBG() {
-  const sensorRadius = 200;
+  const sensorRadius = "1em";
+  const lightOn = (element) => {
+    //console.log(element);
+
+    const light = element.target;
+    //console.log(light);
+    light.style.fill = "white";
+  };
+  const lightOff = (element) => {
+    const light = element.target;
+    setTimeout(() => {
+      light.style.fill = "black";
+    }, 2000);
+  };
+  function lightGroupSetUp(index) {
+    return lightGroupArrays[index].props.children.map((light) => {
+      const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
+      console.log(lightPos);
+      return (
+        <g
+          className="light-group"
+          onMouseEnter={lightOn}
+          onMouseLeave={lightOff}
+        >
+          {/* <circle
+            cx={parseInt(Math.max(lightPos[1], lightPos[2]))}
+            cy={parseInt(Math.min(lightPos[1], lightPos[2]))}
+            r={sensorRadius}
+          /> */}
+          {light}
+        </g>
+      );
+    });
+  }
+
   const lightGroupArrays = [
     <>
       <path
@@ -4075,21 +4109,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 0 */}
-          <g className="lights">
-            {lightGroupArrays[0].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(0)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4105,21 +4125,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 1 */}
-          <g className="lights">
-            {lightGroupArrays[1].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(1)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4135,21 +4141,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 2 */}
-          <g className="lights">
-            {lightGroupArrays[2].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(2)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4165,21 +4157,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 3 */}
-          <g className="lights">
-            {lightGroupArrays[3].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(3)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4195,21 +4173,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 4 */}
-          <g className="lights">
-            {lightGroupArrays[4].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(4)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4225,21 +4189,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 5 */}
-          <g className="lights">
-            {lightGroupArrays[5].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(5)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4255,21 +4205,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 6 */}
-          <g className="lights">
-            {lightGroupArrays[6].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(6)}</g>
         </g>
         <g className="building">
           <g className="logo">
@@ -4376,21 +4312,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 7 */}
-          <g className="lights">
-            {lightGroupArrays[7].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(7)}</g>
         </g>
         <g className="building">
           <g className="walls">
@@ -4401,21 +4323,7 @@ function HomeBG() {
             />
           </g>
           {/* Light Group 8 */}
-          <g className="lights">
-            {lightGroupArrays[8].props.children.map((light) => {
-              const lightPos = light.props.d.split(/ |[a-zA-Z]+/);
-              return (
-                <g className="light-group">
-                  <circle
-                    cx={parseInt(lightPos[1])}
-                    cy={parseInt(lightPos[2])}
-                    r={sensorRadius}
-                  />
-                  {light}
-                </g>
-              );
-            })}
-          </g>
+          <g className="lights">{lightGroupSetUp(8)}</g>
         </g>
       </g>
     </svg>

@@ -13,10 +13,8 @@ body {
 }
 
 .light-group > circle {
-    fill: blue;
-    opacity: 0;
-}
-
-.light-group:hover > .light{
-    fill: white;
+    fill: rgb(58, 190, 140);
+    /* opacity: 0; */
+    stroke: black;
+    stroke-width: 5;
 }
