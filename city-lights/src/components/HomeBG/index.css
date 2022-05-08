@@ -1,4 +1,4 @@
-body {
+/* body {
     overflow: hidden;
 }
 .home-bg {
@@ -14,7 +14,7 @@ body {
 
 .light-group > circle {
     fill: rgb(58, 190, 140);
-    /* opacity: 0; */
+    opacity: 0;
     stroke: black;
     stroke-width: 5;
-}
+} */

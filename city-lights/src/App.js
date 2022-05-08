@@ -1,12 +1,14 @@
-import './App.css';
-import HomeBG from './components/HomeBG'
-
+import { React, useEffect } from "react";
+import "./App.css";
+// import HomeBG from "./components/HomeBG";
+// import Trial from "./components/Trial";
+import HomeBG2 from "./components/HomeBG2";
 function App() {
-  //console.log("App run")
-
   return (
     <div>
-      <HomeBG/>
+      {/* <HomeBG />
+      <Trial /> */}
+      <HomeBG2 />
     </div>
   );
 }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="607" height="490" fill="none" viewBox="0 0 607 490">
+  <g className="building">
+    <path fill="#C4C4C4" d="M0 0h607v490H0z" className="wall"/>
+    <g className="lights">
+      <path fill="#fff" d="M80 75h108v108H80z" className="light"/>
+      <path fill="#fff" d="M375 282h108v108H375z" className="light"/>
+      <path fill="#fff" d="M80 282h108v108H80z" className="light"/>
+      <path fill="#fff" d="M375 75h108v108H375z" className="light"/>
+    </g>
+  </g>
+</svg>

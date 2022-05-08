@@ -4088,12 +4088,7 @@ function HomeBG() {
   ];
   console.log(lightGroupArrays);
   const bgsvgCode = (
-    <svg
-      className="home-bg"
-      viewBox="0 0 1432 836"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-    >
+    <svg className="home-bg" xmlns="http://www.w3.org/2000/svg" fill="none">
       <g className="buildings">
         <g className="building">
           <g className="walls">

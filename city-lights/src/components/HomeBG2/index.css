@@ -1,0 +1,8 @@
+.bg {
+    position: absolute;
+}
+.walls {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+}
